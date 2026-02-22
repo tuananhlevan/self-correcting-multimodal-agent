@@ -34,9 +34,27 @@ def clean_and_parse_json(raw_text: str) -> Dict[str, Any]:
 def extract_data_node(state: AgentState) -> dict:
     # print(f"--- Running Local Extractor Node (Loop {state.get('loop_count', 0) + 1}) ---")
     
+    # base_prompt = f"""
+    # Analyze the provided chart and extract the data needed to answer this user query: "{state['user_query']}"
+    # Return the data STRICTLY as a valid JSON object. No explanations.
+    # """
+    
     base_prompt = f"""
-    Analyze the provided chart and extract the data needed to answer this user query: "{state['user_query']}"
-    Return the data STRICTLY as a valid JSON object. No explanations.
+        You are an analytical data extraction agent. 
+        A user wants to know the answer to this query: "{state['user_query']}"
+        
+        Your job is NOT to calculate the final answer. Your job is ONLY to extract the RAW data points required for a Python script to calculate the answer later.
+        
+        You MUST return the data STRICTLY as a valid JSON object matching this exact schema:
+        {{
+            "reasoning": "Step-by-step logic explaining exactly which raw columns/values are needed to answer the query.",
+            "extracted_data": {{
+                "Raw_Label_1": Value,
+                "Raw_Label_2": Value
+            }}
+        }}
+        
+        Failure to put 'reasoning' first will cause system failure. Do not include markdown explanations outside the JSON.
     """
     
     if state.get("error_history"):

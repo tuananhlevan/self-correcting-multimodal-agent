@@ -4,6 +4,9 @@ import os
 from PIL import Image
 import sys
 
+from dotenv import load_dotenv
+load_dotenv()
+
 # Add the root directory to the system path so we can import our core graph
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 from core.graph import build_graph

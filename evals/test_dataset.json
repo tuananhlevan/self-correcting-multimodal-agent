@@ -1,0 +1,502 @@
+[
+    {
+        "image_path": "evals/test_images/chartqa_sample_0.png",
+        "query": "In March 2018, what was the average waiting time for treatment in the UK?",
+        "expected_answer": "64"
+    },
+    {
+        "image_path": "evals/test_images/chartqa_sample_1.png",
+        "query": "Which year recorded the least daily hempseed production in Europe?",
+        "expected_answer": "1990"
+    },
+    {
+        "image_path": "evals/test_images/chartqa_sample_2.png",
+        "query": "How many Formula One races has Red Bull Racing won?",
+        "expected_answer": "64"
+    },
+    {
+        "image_path": "evals/test_images/chartqa_sample_3.png",
+        "query": "Find the lowest value in the dark blue bar?",
+        "expected_answer": "130"
+    },
+    {
+        "image_path": "evals/test_images/chartqa_sample_4.png",
+        "query": "Which segments has the higher average, general merchandisers or grocers?",
+        "expected_answer": "General Merchandisers"
+    },
+    {
+        "image_path": "evals/test_images/chartqa_sample_5.png",
+        "query": "Which viewer type does of the upper bar in the stacked bars represent?",
+        "expected_answer": "Occasional viewers"
+    },
+    {
+        "image_path": "evals/test_images/chartqa_sample_6.png",
+        "query": "What is the total of Republicans and Democrats in 2010?",
+        "expected_answer": "87"
+    },
+    {
+        "image_path": "evals/test_images/chartqa_sample_7.png",
+        "query": "What percentage of the Dominican Republic's GDP would be affected by the COVID-19 pandemic?",
+        "expected_answer": "6.1"
+    },
+    {
+        "image_path": "evals/test_images/chartqa_sample_8.png",
+        "query": "What sex contributes to more cases?",
+        "expected_answer": "Female"
+    },
+    {
+        "image_path": "evals/test_images/chartqa_sample_9.png",
+        "query": "How many fire-related deaths occurred in Great Britain in 2019/20?",
+        "expected_answer": "286"
+    },
+    {
+        "image_path": "evals/test_images/chartqa_sample_10.png",
+        "query": "What is the difference between the death rates of 5-14 ears old with the death rate of 70+ years old?",
+        "expected_answer": "272.62"
+    },
+    {
+        "image_path": "evals/test_images/chartqa_sample_11.png",
+        "query": "What is the value of the 50-69 years old?",
+        "expected_answer": "8.88"
+    },
+    {
+        "image_path": "evals/test_images/chartqa_sample_12.png",
+        "query": "Does the sum of smallest two bar is greater then then the value of largest bar?",
+        "expected_answer": "Yes"
+    },
+    {
+        "image_path": "evals/test_images/chartqa_sample_13.png",
+        "query": "What online review site did 59 percent of respondents say they had visited to conduct research on a local business?",
+        "expected_answer": "Yelp"
+    },
+    {
+        "image_path": "evals/test_images/chartqa_sample_14.png",
+        "query": "What was the combined number for Manchester United players?",
+        "expected_answer": "61"
+    },
+    {
+        "image_path": "evals/test_images/chartqa_sample_15.png",
+        "query": "what is the difference between the highest and smallest pharmacy service",
+        "expected_answer": "10.1"
+    },
+    {
+        "image_path": "evals/test_images/chartqa_sample_16.png",
+        "query": "What is the estimated amount of eSports sponsorship and advertising spending in the United States in 2023?",
+        "expected_answer": "634.03"
+    },
+    {
+        "image_path": "evals/test_images/chartqa_sample_17.png",
+        "query": "What is the average maize yield in Syria?",
+        "expected_answer": "3.251"
+    },
+    {
+        "image_path": "evals/test_images/chartqa_sample_18.png",
+        "query": "What's the total Economic growth forecast after the COVID-19 outbreak in Denmark in 2020",
+        "expected_answer": "2.5"
+    },
+    {
+        "image_path": "evals/test_images/chartqa_sample_19.png",
+        "query": "What is the sum , if we add  soybean and corn percentage ?",
+        "expected_answer": "80.2"
+    },
+    {
+        "image_path": "evals/test_images/chartqa_sample_20.png",
+        "query": "Which line has the lowest value of 71%?",
+        "expected_answer": "Economy"
+    },
+    {
+        "image_path": "evals/test_images/chartqa_sample_21.png",
+        "query": "What is the value of the highest bar?",
+        "expected_answer": "42"
+    },
+    {
+        "image_path": "evals/test_images/chartqa_sample_22.png",
+        "query": "What is the total value of the TV broadcasting deals of the Premier League in Singapore?",
+        "expected_answer": "297"
+    },
+    {
+        "image_path": "evals/test_images/chartqa_sample_23.png",
+        "query": "What was Telenor's market share in 2012?",
+        "expected_answer": "45.2"
+    },
+    {
+        "image_path": "evals/test_images/chartqa_sample_24.png",
+        "query": "The maximum of 0-14 age group minus the mode of 65 years and older equals to what",
+        "expected_answer": "40.92"
+    },
+    {
+        "image_path": "evals/test_images/chartqa_sample_25.png",
+        "query": "How many players did Juventus FC have as of October 2020?",
+        "expected_answer": "23"
+    },
+    {
+        "image_path": "evals/test_images/chartqa_sample_26.png",
+        "query": "What was the estimated incidence rate of treated end-stage renal disease in Taiwan in 2016?",
+        "expected_answer": "493"
+    },
+    {
+        "image_path": "evals/test_images/chartqa_sample_27.png",
+        "query": "Which liquid soap brand has managed to maintain positive sales growth over the specified time period?",
+        "expected_answer": "Carex"
+    },
+    {
+        "image_path": "evals/test_images/chartqa_sample_28.png",
+        "query": "Which Italian football team won the most Coppa Italia competitions in 2020?",
+        "expected_answer": "Juventus FC"
+    },
+    {
+        "image_path": "evals/test_images/chartqa_sample_29.png",
+        "query": "What is the difference betweeen respondents of Non-hazardous waste between 2017 and 2008?",
+        "expected_answer": "25"
+    },
+    {
+        "image_path": "evals/test_images/chartqa_sample_30.png",
+        "query": "What percentage of Nigeria's GDP did the oil sector contribute in the first months of 2021?",
+        "expected_answer": "9.25"
+    },
+    {
+        "image_path": "evals/test_images/chartqa_sample_31.png",
+        "query": "Which region the females value shows 10.4 and males value as 3.8?",
+        "expected_answer": "London"
+    },
+    {
+        "image_path": "evals/test_images/chartqa_sample_32.png",
+        "query": "In which year the difference between blue and green graph 1?",
+        "expected_answer": "2018"
+    },
+    {
+        "image_path": "evals/test_images/chartqa_sample_33.png",
+        "query": "What was the total attendance during the 2019/2020 season?",
+        "expected_answer": "3.45"
+    },
+    {
+        "image_path": "evals/test_images/chartqa_sample_34.png",
+        "query": "For North America and Asia Pacific regions, which revenue average across all years is bigger?",
+        "expected_answer": "North America"
+    },
+    {
+        "image_path": "evals/test_images/chartqa_sample_35.png",
+        "query": "What is the difference between the first and last year's results?",
+        "expected_answer": "2.95"
+    },
+    {
+        "image_path": "evals/test_images/chartqa_sample_36.png",
+        "query": "How many home runs has Al Kaline hit?",
+        "expected_answer": "399"
+    },
+    {
+        "image_path": "evals/test_images/chartqa_sample_37.png",
+        "query": "What is the difference between the ages in 2014/15?",
+        "expected_answer": "21.2"
+    },
+    {
+        "image_path": "evals/test_images/chartqa_sample_38.png",
+        "query": "What's the difference in the value of the total number of persons who want to improve the way government works and who have not?",
+        "expected_answer": "33"
+    },
+    {
+        "image_path": "evals/test_images/chartqa_sample_39.png",
+        "query": "WHat is the difference between hair care and makeup?",
+        "expected_answer": "6.12"
+    },
+    {
+        "image_path": "evals/test_images/chartqa_sample_40.png",
+        "query": "What is the percentage revenue share of the LVMH Group worldwide in 2020 from the United States?",
+        "expected_answer": "24"
+    },
+    {
+        "image_path": "evals/test_images/chartqa_sample_41.png",
+        "query": "Which country is represented by blue color line?",
+        "expected_answer": "Belgium"
+    },
+    {
+        "image_path": "evals/test_images/chartqa_sample_42.png",
+        "query": "What's the percentage of the total population that favors weakening the EU?",
+        "expected_answer": "65"
+    },
+    {
+        "image_path": "evals/test_images/chartqa_sample_43.png",
+        "query": "How many people lived in Hovedstaden in the first quarter of 2021?",
+        "expected_answer": "1846023"
+    },
+    {
+        "image_path": "evals/test_images/chartqa_sample_44.png",
+        "query": "What percentage of SMEs in 2018 were completely controlled by family administration?",
+        "expected_answer": "50"
+    },
+    {
+        "image_path": "evals/test_images/chartqa_sample_45.png",
+        "query": "What was the FMCG brand with the highest penetration rate in the UK in 2020?",
+        "expected_answer": "Heinz"
+    },
+    {
+        "image_path": "evals/test_images/chartqa_sample_46.png",
+        "query": "What is the difference in the monthly average earnings per hour of all employees in the US  between May 2020 and May 2021",
+        "expected_answer": "0.59"
+    },
+    {
+        "image_path": "evals/test_images/chartqa_sample_47.png",
+        "query": "In what year did Australia reach its peak?",
+        "expected_answer": "1980"
+    },
+    {
+        "image_path": "evals/test_images/chartqa_sample_48.png",
+        "query": "What percent of US adults who say their state governments policies to control the spread of coronavirus are influence A Fair amount by evidence from public health experts ?",
+        "expected_answer": "40"
+    },
+    {
+        "image_path": "evals/test_images/chartqa_sample_49.png",
+        "query": "What market share accounted for 29.3 percent of Italy's total domestic consumption in 20120?",
+        "expected_answer": "Supermarkets"
+    },
+    {
+        "image_path": "evals/test_images/chartqa_sample_50.png",
+        "query": "What is the color of Mexico bar?",
+        "expected_answer": "Pink"
+    },
+    {
+        "image_path": "evals/test_images/chartqa_sample_51.png",
+        "query": "How many types have been considered?",
+        "expected_answer": "4"
+    },
+    {
+        "image_path": "evals/test_images/chartqa_sample_52.png",
+        "query": "How many immigrants lived in Mongolia in 2010?",
+        "expected_answer": "16"
+    },
+    {
+        "image_path": "evals/test_images/chartqa_sample_53.png",
+        "query": "How many people died in the American Civil War?",
+        "expected_answer": "620000"
+    },
+    {
+        "image_path": "evals/test_images/chartqa_sample_54.png",
+        "query": "What percentage of Malaysians said they had been stocking up eggs during the COVID-19 outbreak?",
+        "expected_answer": "83"
+    },
+    {
+        "image_path": "evals/test_images/chartqa_sample_55.png",
+        "query": "What is the revenue of travel agencies?",
+        "expected_answer": "270.3"
+    },
+    {
+        "image_path": "evals/test_images/chartqa_sample_56.png",
+        "query": "Use Gay men data from Dating, Hook up and Entertainment and Find the average of this data ?",
+        "expected_answer": "34.66"
+    },
+    {
+        "image_path": "evals/test_images/chartqa_sample_57.png",
+        "query": "What was the value of the pizza delivery market in the UK at the end of 2017?",
+        "expected_answer": "6.2"
+    },
+    {
+        "image_path": "evals/test_images/chartqa_sample_58.png",
+        "query": "What is the lowest value in dark blue bar?",
+        "expected_answer": "21"
+    },
+    {
+        "image_path": "evals/test_images/chartqa_sample_59.png",
+        "query": "What's the ratio of Never/Rarely and Occasionally/Frequently in Luo?",
+        "expected_answer": "0.085416667"
+    },
+    {
+        "image_path": "evals/test_images/chartqa_sample_60.png",
+        "query": "What percentage of cosmetic surgery procedures took place in Mexico in 2018?",
+        "expected_answer": "4.5"
+    },
+    {
+        "image_path": "evals/test_images/chartqa_sample_61.png",
+        "query": "What is the percentage of jobs that Northern Ireland and the South West region are expected to lose?",
+        "expected_answer": "1.2"
+    },
+    {
+        "image_path": "evals/test_images/chartqa_sample_62.png",
+        "query": "If we add Gucci and Saint Laurent percentage, write the result?",
+        "expected_answer": "73"
+    },
+    {
+        "image_path": "evals/test_images/chartqa_sample_63.png",
+        "query": "Which is the lowest unpaid internships by sector in US?",
+        "expected_answer": "Government"
+    },
+    {
+        "image_path": "evals/test_images/chartqa_sample_64.png",
+        "query": "What's the percentage value of the blue bar in Greece?",
+        "expected_answer": "87"
+    },
+    {
+        "image_path": "evals/test_images/chartqa_sample_65.png",
+        "query": "In which period, there should be a referendum is high ?",
+        "expected_answer": "Jul 25-26"
+    },
+    {
+        "image_path": "evals/test_images/chartqa_sample_66.png",
+        "query": "What was Hornbach's sales revenue in 2013?",
+        "expected_answer": "2"
+    },
+    {
+        "image_path": "evals/test_images/chartqa_sample_67.png",
+        "query": "Find out the average of the bottom three countries ??",
+        "expected_answer": "0.0593"
+    },
+    {
+        "image_path": "evals/test_images/chartqa_sample_68.png",
+        "query": "What's the most popular condition in the chart?",
+        "expected_answer": "Normal, healthy"
+    },
+    {
+        "image_path": "evals/test_images/chartqa_sample_69.png",
+        "query": "How many new movies were released in 2003?",
+        "expected_answer": "528"
+    },
+    {
+        "image_path": "evals/test_images/chartqa_sample_70.png",
+        "query": "what's the combined share of top three energy sources?",
+        "expected_answer": "81.2"
+    },
+    {
+        "image_path": "evals/test_images/chartqa_sample_71.png",
+        "query": "Who is the career rushing leader of the New England Patriots?",
+        "expected_answer": "Sam Cunningham"
+    },
+    {
+        "image_path": "evals/test_images/chartqa_sample_72.png",
+        "query": "How much revenue did Nutrien report in 2020?",
+        "expected_answer": "20908"
+    },
+    {
+        "image_path": "evals/test_images/chartqa_sample_73.png",
+        "query": "How many oscars do jack nicolson and meryl streep have combined?",
+        "expected_answer": "6"
+    },
+    {
+        "image_path": "evals/test_images/chartqa_sample_74.png",
+        "query": "How much did travel and tourism contribute to the Greek economy in 2017?",
+        "expected_answer": "14"
+    },
+    {
+        "image_path": "evals/test_images/chartqa_sample_75.png",
+        "query": "What is the sum of natural gas and oil?",
+        "expected_answer": "54.4"
+    },
+    {
+        "image_path": "evals/test_images/chartqa_sample_76.png",
+        "query": "Count the number of yellow bars with 30 values?",
+        "expected_answer": "3"
+    },
+    {
+        "image_path": "evals/test_images/chartqa_sample_77.png",
+        "query": "Where was the 2014 FIFA World Cup held?",
+        "expected_answer": "Brazil"
+    },
+    {
+        "image_path": "evals/test_images/chartqa_sample_78.png",
+        "query": "Would the combined homicide rate for the 5-14 and Under 5's be bigger than All Ages?",
+        "expected_answer": "No"
+    },
+    {
+        "image_path": "evals/test_images/chartqa_sample_79.png",
+        "query": "What percentage of Antigua and Barbuda's total employment did tourism contribute to in 2019?",
+        "expected_answer": "90.7"
+    },
+    {
+        "image_path": "evals/test_images/chartqa_sample_80.png",
+        "query": "Who holds the record for most points scored at the Rugby World Cup?",
+        "expected_answer": "Ronan O'Gara"
+    },
+    {
+        "image_path": "evals/test_images/chartqa_sample_81.png",
+        "query": "What was Trinidad & Tobago's internal tourism consumption in dollars in 2019?",
+        "expected_answer": "1.91"
+    },
+    {
+        "image_path": "evals/test_images/chartqa_sample_82.png",
+        "query": "What percentage believe the government is slightly or not at all corrupt?",
+        "expected_answer": "11"
+    },
+    {
+        "image_path": "evals/test_images/chartqa_sample_83.png",
+        "query": "Which country was the leading global exporter of avocados in 2019?",
+        "expected_answer": "Mexico"
+    },
+    {
+        "image_path": "evals/test_images/chartqa_sample_84.png",
+        "query": "In which year the share of people having access to clean fuel for cooking is maximum in Bosnia and Herzegovina?",
+        "expected_answer": "2013"
+    },
+    {
+        "image_path": "evals/test_images/chartqa_sample_85.png",
+        "query": "What's the total sum of peak points of green and red lines?",
+        "expected_answer": "87"
+    },
+    {
+        "image_path": "evals/test_images/chartqa_sample_86.png",
+        "query": "What percentage of U.S. families had an annual income between 35,000 and 49,999 U.S. dollars?",
+        "expected_answer": "10.5"
+    },
+    {
+        "image_path": "evals/test_images/chartqa_sample_87.png",
+        "query": "Which two countries are being compared in the given line graph?",
+        "expected_answer": "[Africa, Northern America]"
+    },
+    {
+        "image_path": "evals/test_images/chartqa_sample_88.png",
+        "query": "What was the most popular newspaper in the UK in the fourth quarter of 2020?",
+        "expected_answer": "Metro"
+    },
+    {
+        "image_path": "evals/test_images/chartqa_sample_89.png",
+        "query": "Which country shows highest rise in the Short term interest rates from 1995 to 2000?",
+        "expected_answer": "Brazil"
+    },
+    {
+        "image_path": "evals/test_images/chartqa_sample_90.png",
+        "query": "What is the deepest lake in Italy?",
+        "expected_answer": "Lago Maggiore"
+    },
+    {
+        "image_path": "evals/test_images/chartqa_sample_91.png",
+        "query": "What was the lowest value of French imports from Russia in 2016?",
+        "expected_answer": "6119"
+    },
+    {
+        "image_path": "evals/test_images/chartqa_sample_92.png",
+        "query": "What is the average of net worth of the first three actors in the graph?",
+        "expected_answer": "15"
+    },
+    {
+        "image_path": "evals/test_images/chartqa_sample_93.png",
+        "query": "What neighbor country received roughly four percent of the long-haul Dutch tourists in 2015?",
+        "expected_answer": "Belgium"
+    },
+    {
+        "image_path": "evals/test_images/chartqa_sample_94.png",
+        "query": "What is the value of shortest light blue bar?",
+        "expected_answer": "2.5"
+    },
+    {
+        "image_path": "evals/test_images/chartqa_sample_95.png",
+        "query": "What was the global number of Inditex employees in 2020?",
+        "expected_answer": "144116"
+    },
+    {
+        "image_path": "evals/test_images/chartqa_sample_96.png",
+        "query": "Which country was Spain's most important export partner in 2019?",
+        "expected_answer": "France"
+    },
+    {
+        "image_path": "evals/test_images/chartqa_sample_97.png",
+        "query": "What was the infant mortality rate in the Kyrgyz Republic in 2019?",
+        "expected_answer": "16.4"
+    },
+    {
+        "image_path": "evals/test_images/chartqa_sample_98.png",
+        "query": "What is the ratio of No change to not sure?",
+        "expected_answer": "1.6"
+    },
+    {
+        "image_path": "evals/test_images/chartqa_sample_99.png",
+        "query": "What is the difference in the support of Euro between Spain and Italy?",
+        "expected_answer": "0.15"
+    }
+]

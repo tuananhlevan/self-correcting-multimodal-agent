@@ -1,5 +1,5 @@
 import torch
-from transformers import Qwen2_5_VLForConditionalGeneration, AutoProcessor
+from transformers import Qwen2_5_VLForConditionalGeneration, AutoProcessor, BitsAndBytesConfig
 from qwen_vl_utils import process_vision_info
 
 class LocalAIEngine:
@@ -15,10 +15,18 @@ class LocalAIEngine:
     def _initialize_model(self):
         # print("🚀 Loading Qwen2.5-VL-7B into VRAM (This will take ~15GB)...")
         # bfloat16 is critical here. If you use float32, it takes 28GB+ and you will OOM.
+        
+        bnb_config = BitsAndBytesConfig(
+            load_in_4bit=True,
+            bnb_4bit_compute_dtype=torch.bfloat16,
+            bnb_4bit_use_double_quant=True,
+            bnb_4bit_quant_type="nf4",
+        )
+        
         self.model = Qwen2_5_VLForConditionalGeneration.from_pretrained(
             "Qwen/Qwen2.5-VL-7B-Instruct",
-            torch_dtype=torch.bfloat16,
-            device_map="auto" # Automatically uses your GPU
+            device_map="auto", # Automatically uses your GPU
+            quantization_config=bnb_config
         )
         self.processor = AutoProcessor.from_pretrained("Qwen/Qwen2.5-VL-7B-Instruct")
         # print("✅ Model loaded successfully.")
