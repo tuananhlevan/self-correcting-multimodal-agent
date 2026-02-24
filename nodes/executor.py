@@ -8,13 +8,11 @@ def execute_code_node(state: AgentState) -> dict:
     Takes the generated Python script, writes it to a temporary file, 
     executes it in a separate process, and captures the output or errors.
     """
-    # print(f"--- Running Sandbox Executor Node ---")
     
     generated_code = state.get("generated_code", "")
     
     # 1. Edge Case Handling: Catch upstream failures
     if "FAILED_BEFORE_EXECUTION" in generated_code:
-        # print("Bypassing execution due to upstream extraction failure.")
         return {
             "execution_result": "FAILED",
             "error_history": [generated_code] # Append the upstream error to history
@@ -42,7 +40,6 @@ def execute_code_node(state: AgentState) -> dict:
         
         # 4. Evaluate the result against our deterministic contract
         if result.returncode == 0 and "SUCCESS:" in stdout:
-            # print(f"Execution Successful! Output: {stdout}")
             return {
                 "execution_result": stdout,
                 "final_answer": stdout.replace("SUCCESS:", "").strip()
@@ -51,9 +48,8 @@ def execute_code_node(state: AgentState) -> dict:
             # Code ran, but logic failed (e.g., missing the SUCCESS tag)
             # Or the code crashed (returncode != 0)
             error_msg = stderr if stderr else f"Logic Error: Script ran but did not output 'SUCCESS:'. Output was: {stdout}"
-            # print(f"Execution Failed: {error_msg}")
             
-            # Notice we wrap the error in a list [error_msg]. 
+            # We wrap the error in a list [error_msg]. 
             # Because we used operator.add in our State definition, LangGraph will append this!
             return {
                 "execution_result": "FAILED",
@@ -61,7 +57,6 @@ def execute_code_node(state: AgentState) -> dict:
             }
 
     except subprocess.TimeoutExpired:
-        # print("Execution Timeout: Code took too long to run.")
         return {
             "execution_result": "FAILED",
             "error_history": ["TimeoutExpired: The generated code took longer than 10 seconds and was killed. Check for infinite loops."]

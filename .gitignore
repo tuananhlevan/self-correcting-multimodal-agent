@@ -1,3 +1,4 @@
 .env
 pyproject.toml
 */__pycache__
+evals/test_images

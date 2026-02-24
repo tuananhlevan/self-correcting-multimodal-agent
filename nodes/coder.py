@@ -34,7 +34,6 @@ def write_code_node(state: AgentState) -> dict:
         for err in state.get("error_history"):
             base_prompt += f"\n- Traceback: {err}"
 
-    # For text-only tasks, we omit the "image" dict
     messages = [
         {"role": "system", "content": "You write executable Python code without markdown filler."},
         {"role": "user", "content": [{"type": "text", "text": base_prompt}]}

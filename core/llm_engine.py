@@ -13,8 +13,6 @@ class LocalAIEngine:
         return cls._instance
 
     def _initialize_model(self):
-        # print("🚀 Loading Qwen2.5-VL-7B into VRAM (This will take ~15GB)...")
-        # bfloat16 is critical here. If you use float32, it takes 28GB+ and you will OOM.
         
         bnb_config = BitsAndBytesConfig(
             load_in_4bit=True,
@@ -25,11 +23,10 @@ class LocalAIEngine:
         
         self.model = Qwen2_5_VLForConditionalGeneration.from_pretrained(
             "Qwen/Qwen2.5-VL-7B-Instruct",
-            device_map="auto", # Automatically uses your GPU
+            device_map="auto",
             quantization_config=bnb_config
         )
         self.processor = AutoProcessor.from_pretrained("Qwen/Qwen2.5-VL-7B-Instruct")
-        # print("✅ Model loaded successfully.")
 
     def generate_response(self, messages: list) -> str:
         """Handles the actual inference generation."""

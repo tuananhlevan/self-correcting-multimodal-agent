@@ -3,11 +3,10 @@ import json
 import random
 from datasets import load_dataset
 
-def generate_benchmark_dataset(num_samples: int = 20):
-    print("📥 Downloading ChartQA dataset from Hugging Face...")
-    print("   (This might take a minute if it's your first time downloading it)")
+def generate_benchmark_dataset(full: bool = False, num_samples: int = 20):
+    print("Downloading ChartQA dataset from Hugging Face...")
     
-    # We use the validation split because it's meant for testing and is smaller to download
+    # Use the validation split because it's meant for testing and is smaller to download
     dataset = load_dataset("HuggingFaceM4/ChartQA", split="val")
     
     # Create the directory for the images if it doesn't exist
@@ -16,9 +15,12 @@ def generate_benchmark_dataset(num_samples: int = 20):
     
     json_path = os.path.join(os.path.dirname(__file__), "test_dataset.json")
     
-    print(f"🔀 Randomly sampling {num_samples} charts...")
-    # Shuffle the dataset and select the requested number of samples
-    sampled_dataset = dataset.shuffle(seed=41).select(range(num_samples))
+    if full:
+        sampled_dataset = dataset.shuffle(seed=41)
+    else:
+        print(f"Randomly sampling {num_samples} charts...")
+        # Shuffle the dataset and select the requested number of samples
+        sampled_dataset = dataset.shuffle(seed=41).select(range(num_samples))
     
     benchmark_data = []
     
@@ -37,27 +39,26 @@ def generate_benchmark_dataset(num_samples: int = 20):
         query = item["query"]
         
         # ChartQA stores answers in a list under the 'label' key (e.g., ["49"])
-        # We grab the first item in the list
+        # Grab the first item in the list
         expected_answer = item["label"][0] if isinstance(item["label"], list) else item["label"]
         
         # 3. Format it for our benchmark script
         benchmark_data.append({
-            # We save the relative path from the root directory so main.py can find it
+            # Save the relative path from the root directory so main.py can find it
             "image_path": f"evals/test_images/{image_filename}",
             "query": query,
             "expected_answer": expected_answer
         })
         
-        print(f"   💾 Saved Sample {i+1}: {query[:50]}... -> {expected_answer}")
+        print(f"Saved Sample {i+1}: {query[:50]}... -> {expected_answer}")
 
     # 4. Save the JSON ledger
     with open(json_path, 'w') as f:
         json.dump(benchmark_data, f, indent=4)
         
-    print("\n✅ Dataset generation complete!")
+    print("\nDataset generation complete!")
     print(f"   Images saved to: {output_dir}")
     print(f"   JSON saved to:   {json_path}")
-    print("\n🚀 You are now ready to run: python evals/benchmark.py")
 
 if __name__ == "__main__":
-    generate_benchmark_dataset(100)
+    generate_benchmark_dataset(True, 0)

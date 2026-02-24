@@ -18,7 +18,7 @@ st.set_page_config(
     layout="wide"
 )
 
-st.title("📈 Multimodal Reasoning & Self-Correcting Agent")
+st.title("Multimodal Reasoning & Self-Correcting Agent")
 st.markdown("""
 This agent extracts data from complex charts and writes Python scripts to verify its own math deterministically. 
 If the code crashes, it loops back, reads the stack trace, and looks at the image again to correct its mistakes.
@@ -71,17 +71,17 @@ with col2:
                             if node_name == "vision_extractor":
                                 loop_num = state_update.get('loop_count', 1)
                                 if loop_num > 1:
-                                    status.update(label=f"🔄 Self-Correction Loop Active (Attempt {loop_num})...")
+                                    status.update(label=f"Self-Correction Loop Active (Attempt {loop_num})...")
                                     st.warning(f"**Re-evaluating image based on previous failure...**")
                                 else:
-                                    status.update(label="👁️ Extracting Data from Image...")
+                                    status.update(label="Extracting Data from Image...")
                                     
                                 st.markdown("##### Extracted JSON:")
                                 st.json(state_update.get("extracted_data", {}))
                                 st.divider()
                                 
                             elif node_name == "code_generator":
-                                status.update(label="💻 Writing Python Verification Script...")
+                                status.update(label="Writing Python Verification Script...")
                                 st.markdown("##### Generated Sandbox Code:")
                                 st.code(state_update.get("generated_code", ""), language="python")
                                 st.divider()
@@ -89,18 +89,18 @@ with col2:
                             elif node_name == "sandbox_executor":
                                 if "final_answer" in state_update:
                                     # SUCCESS!
-                                    status.update(label="✅ Execution Successful!", state="complete")
+                                    status.update(label="Execution Successful!", state="complete")
                                     st.success(f"### Final Verified Answer:\n**{state_update['final_answer']}**")
                                     st.balloons() # A little flair for the demo video
                                 elif "error_history" in state_update:
                                     # FAILURE! Show the error and loop back
-                                    status.update(label="⚠️ Execution Failed. Triggering Recalibration...")
+                                    status.update(label="Execution Failed. Triggering Recalibration...")
                                     latest_error = state_update['error_history'][-1]
                                     st.error(f"**Sandbox Exception Caught:**\n\n```text\n{latest_error}\n```")
                                     st.divider()
                                     
                 except Exception as e:
-                    status.update(label="❌ Critical Pipeline Failure", state="error")
+                    status.update(label="Critical Pipeline Failure", state="error")
                     st.error(f"System Error: {str(e)}")
                 finally:
                     # Clean up the temp image

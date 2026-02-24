@@ -4,12 +4,6 @@ from typing import Dict, Any
 from core.state import AgentState
 from core.llm_engine import ai_engine
 
-# Assuming we saved our Step 1 code in a utils or models folder
-# from models.vlm_model import BaselineVisionExtractor
-
-# Initialize the model once so we don't reload weights on every loop
-# vision_model = BaselineVisionExtractor()
-
 def clean_and_parse_json(raw_text: str) -> Dict[str, Any]:
     """
     Forces the raw text output from the VLM into a valid Python dictionary.
@@ -32,12 +26,6 @@ def clean_and_parse_json(raw_text: str) -> Dict[str, Any]:
 
 
 def extract_data_node(state: AgentState) -> dict:
-    # print(f"--- Running Local Extractor Node (Loop {state.get('loop_count', 0) + 1}) ---")
-    
-    # base_prompt = f"""
-    # Analyze the provided chart and extract the data needed to answer this user query: "{state['user_query']}"
-    # Return the data STRICTLY as a valid JSON object. No explanations.
-    # """
     
     base_prompt = f"""
         You are an analytical data extraction agent. 
