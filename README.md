@@ -28,8 +28,8 @@ The self-correction loop was rigorously evaluated against a 100-sample validatio
 
 | Metric | Baseline (Zero-Shot) | Self-Correcting Loop (System 2) | Delta |
 | :--- | :--- | :--- | :--- |
-| **Accuracy** | 57% | **63%** | 🟢 **+6%** |
-| **Avg. Inference Time** | 5.6s | 14.2s | - |
+| **Accuracy** | 57% | **63%** | **+6%** |
+| **Avg. Inference Time** | 5.6s | 14.2s | +8.6s |
 | **Peak VRAM** | 15.1 GB | 15.1 GB | Maintained |
 
 *Note: The unified singleton pattern ensures peak VRAM remains stable even during cyclic prompt loops.*
