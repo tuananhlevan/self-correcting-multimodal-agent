@@ -1,8 +1,8 @@
-# 👁️🧠 Multimodal Self-Correcting Reasoning Agent
+# Multimodal Self-Correcting Reasoning Agent
 
 An autonomous, self-correcting vision agent that extracts data from complex charts and writes deterministic Python scripts to verify its own analytical reasoning. Built entirely with local open-weights models.
 
-## 🚀 The Problem & The Solution
+## The Problem & The Solution
 
 **The Problem:** Standard Vision-Language Models (VLMs) hallucinate math. When asked to calculate a percentage drop on a complex bar chart, they often guess the final number rather than performing the calculation, leading to high failure rates on analytical benchmarks.
 
@@ -12,7 +12,7 @@ An autonomous, self-correcting vision agent that extracts data from complex char
 3. It executes the script in an isolated, timeout-protected sandbox.
 4. **Self-Correction:** If the code crashes or the math fails, the agent captures the `stderr` stack trace, loops backward, evaluates its previous failure, and re-reads the chart to fix its mistake.
 
-## 🏗️ System Architecture
+## System Architecture
 
 
 
@@ -22,7 +22,7 @@ The orchestration is handled via **LangGraph**, utilizing a strict state machine
 * **Control Flow:** Deterministic routing based on sandbox execution `returncode`, bypassing unreliable LLM function-calling for loop management.
 * **Fail-Safes:** Includes regex fallback parsers for JSON hallucination and strict process isolation (`subprocess`) for executing generated code.
 
-## 📊 Evaluation & Benchmarks
+## Evaluation & Benchmarks
 
 The self-correction loop was rigorously evaluated against a 100-sample validation subset of the **HuggingFace ChartQA** dataset.
 
@@ -34,13 +34,13 @@ The self-correction loop was rigorously evaluated against a 100-sample validatio
 
 *Note: The unified singleton pattern ensures peak VRAM remains stable even during cyclic prompt loops.*
 
-## 💻 Tech Stack
+## Tech Stack
 * **Deep Learing:** `PyTorch`, `transformers`, `accelerate`, `bitsandbytes`
 * **Agentic Framework:** `LangGraph`
 * **Frontend/Observability:** `Streamlit`
 * **Evaluation:** `datasets`
 
-## 🛠️ Quick Start
+## Quick Start
 
 **1. Clone & Install**
 ```bash
