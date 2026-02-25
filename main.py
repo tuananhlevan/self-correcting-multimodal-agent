@@ -35,31 +35,31 @@ def run_agent(image_path: str, query: str):
         for output in app.stream(initial_state):
             # output is a dict where the key is the node name, and the value is the state update
             for node_name, state_update in output.items():
-                print(f"\n➡️  [Node Executed]: {node_name.upper()}")
+                print(f"\n[Node Executed]: {node_name.upper()}")
                 
                 # --- Observability Printouts ---
                 if node_name == "vision_extractor":
                     loop_num = state_update.get("loop_count", 1)
                     if loop_num > 1:
-                        print(f"   🔄 SELF-CORRECTION LOOP ACTIVE (Attempt {loop_num})")
-                        print("   👀 Re-evaluating image based on previous errors...")
+                        print(f"   SELF-CORRECTION LOOP ACTIVE (Attempt {loop_num})")
+                        print("   Re-evaluating image based on previous errors...")
                     else:
-                        print("   📥 Initial image data extracted.")
+                        print("   Initial image data extracted.")
                         
                 elif node_name == "code_generator":
-                    print("   💻 Python verification script generated.")
+                    print("   Python verification script generated.")
                     
                 elif node_name == "sandbox_executor":
                     if "final_answer" in state_update:
-                        print(f"\n✅ SUCCESS! Final Answer: {state_update['final_answer']}")
+                        print(f"\nSUCCESS! Final Answer: {state_update['final_answer']}")
                     elif "error_history" in state_update:
                         # Grab the most recent error we just appended
                         latest_error = state_update['error_history'][-1] 
-                        print(f"   ⚠️ EXECUTION FAILED. Caught Error:\n   {latest_error[:150]}...") # Truncate for console
+                        print(f"   EXECUTION FAILED. Caught Error:\n   {latest_error[:150]}...") # Truncate for console
                         print("   Routing back to vision extractor...")
                         
     except Exception as e:
-        print(f"\n❌ Critical Pipeline Failure: {e}")
+        print(f"\nCritical Pipeline Failure: {e}")
 
     print("\n" + "=" * 60)
     print("Workflow Complete.")
