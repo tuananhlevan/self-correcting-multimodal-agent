@@ -61,4 +61,4 @@ def generate_benchmark_dataset(full: bool = False, num_samples: int = 20):
     print(f"   JSON saved to:   {json_path}")
 
 if __name__ == "__main__":
-    generate_benchmark_dataset(True, 0)
+    generate_benchmark_dataset(False, 100)

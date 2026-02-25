@@ -12,7 +12,7 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 from core.graph import build_graph
 
 def run_benchmark(dataset_path: str):
-    print("🚀 Initializing Benchmark Suite...")
+    print("Initializing Benchmark Suite...")
     
     # Load the evaluation dataset
     with open(dataset_path, 'r') as f:
@@ -31,7 +31,7 @@ def run_benchmark(dataset_path: str):
 
     total_time = 0
 
-    print(f"📊 Running evaluation on {len(dataset)} charts...\n")
+    print(f"Running evaluation on {len(dataset)} charts...\n")
 
     for i, item in enumerate(dataset):
         print(f"--- Evaluating Item {i+1}/{len(dataset)}: {item['image_path']} ---")
@@ -84,7 +84,7 @@ def run_benchmark(dataset_path: str):
             print(f"❌ FAIL: Expected '{expected}', got '{actual_answer}'.")
             results["failed"] += 1
             
-        print(f"⏱️ Time: {execution_time:.2f}s | 💾 Peak VRAM: {peak_vram_gb:.2f} GB\n")
+        print(f"Time: {execution_time:.2f}s | Peak VRAM: {peak_vram_gb:.2f} GB\n")
 
     # --- Final Report Generation ---
     results["average_time_seconds"] = total_time / len(dataset)
@@ -93,7 +93,7 @@ def run_benchmark(dataset_path: str):
     improvement = final_accuracy - baseline_accuracy
 
     print("=" * 50)
-    print("🏆 BENCHMARK RESULTS")
+    print("BENCHMARK RESULTS")
     print("=" * 50)
     print(f"Baseline Accuracy (No Loops):    {baseline_accuracy:.1f}%")
     print(f"Final Accuracy (Self-Correcting): {final_accuracy:.1f}%")
